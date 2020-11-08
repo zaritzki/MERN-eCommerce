@@ -1,11 +1,17 @@
 import express from 'express'
-import asyncHandler from 'express-async-handler'
-
-import Product from '../models/productModel.js'
 
 const router = express.Router()
+import  { 
+    getProducts,
+    getProductById
+ } from '../controllers/productController.js'
 
 
+// Get the Route connected to the Controllers
+router.route('/').get(getProducts);
+router.route('/:id').get(getProductById);
+
+/*
 // @desc    Fetch all products
 // @route   GET /api/products
 // @access  Public
@@ -17,17 +23,12 @@ router.get(
         // .find({}) - passing empty object to get everything
         const products =  await Product.find({})
 
-        // to test error
-        /*
-        res.status(401)
-        throw new Error('Not Authorised')
-        */
-
         res.json(products)
     })
 )
+*/
 
-    
+/*
 // @desc    Fetch single product
 // @route   GET /api/products/:id
 // @access  Public
@@ -49,5 +50,6 @@ router.get(
         }
     })
 )
+*/
 
 export default router

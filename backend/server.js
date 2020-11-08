@@ -8,6 +8,7 @@ import connectDB from './config/db.js'
 // import products from './data/products.js'
 
 import productRoutes from './routes/productRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 dotenv.config()
 
@@ -16,22 +17,16 @@ connectDB()
 
 const app = express()
 
+// this is to allow us to acced json data in the body
+app.use(express.json())
+
 app.get('/', (req, res) => {
      res.send('API is running...')
 })
 
-/* REMOVED: Move to routes/productRoutes.js
-app.get('/api/products', (req, res) => {
-    res.json(products)
-})
-
-app.get('/api/products/:id', (req, res) => {
-    const product = products.find(p => p._id === req.params.id);
-    res.json(product)
-})
-*/
-
+// Routes - connected to backend/routes/
 app.use('/api/products', productRoutes)
+app.use('/api/users', userRoutes)
 
 // Fallback: 404 error and Error Handler
 app.use(notFound)

@@ -291,3 +291,57 @@ File: (Section 5: Lesson 30) - Product Details Reducer & Action
 
 * Section 6: Adding the Shopping Cart
 File: (Section 6: Lesson 31) - Qty Select & Add to Cart Button
+    - goto ProductScreens.js in frontend/src/screens/ and add useState and more
+
+    - create a new file under frontend/src/screens called 'CartScreen.js' and add to App.js
+
+File: (Section 6: Lesson 32) - Cart Reducer & Add To Cart Action
+    - same structure/flow
+        1. start with the frontend/src/constants/ in cartConstant.js
+        2. next will go to frontend/src/reducers/ in cartReducers.js
+        3. next add it to frontend/src/store.js
+        4. create our a new actions in frontend/src/actions/ in cartActions.js
+            // we save to localStorag
+            // we need JSON.Strinify() we can only see string in localStorage
+            // to get it goto store.js - to get the localStorage items. however need to use JSON.parse()
+        
+
+File: (Section 6: Lesson 33) - Add To Cart Functionality
+    - do the changes for CartScreen.js from frontend/src/screens
+
+File: (Section 6: Lesson 34) - Cart Screen
+    - CONTINUE: do the changes for CartScreen.js from frontend/src/screens
+    - add some custom css, in index.css
+
+File: (Section 6: Lesson 35) - Remove Items From Cart
+    1. next will go to frontend/src/reducers/ in cartReducers.js
+        - add the Reducer - CART_REMOVE_ITEM in frontend/src/reducers/cartReducer.js
+    2. create our a new actions in frontend/src/actions/ in cartActions.js
+        - do new action for removeFromCart()
+    
+
+// ********************************************************* //
+    Back to Backend
+    Section 6: Back End User Authentication
+// ********************************************************* //
+
+File: (Section 7: Lesson 36) - Clean Up By Using Controllers
+    - first a little cleanup first, in route js file, we have to have controllers that handle the functionality
+    - lets create new folder called 'controllers' in the backend, and productController.js inside
+    - do the copying/moving code
+    - and remove some code in backend/routes/productRoutes.js
+
+File: (Section 7: Lesson 37) - User Authentication Endpoint
+    - create a Route in backend/routes/ called 'userRoutes.js'
+    - and create a Controller in backend/controllers/ called 'userController.js'
+        - to get the data from the FORM is through 'req.body', however we need to add body parser 'app.use(express.json())' in server.js
+    - then add the route in server.js
+    - goto userModel.js in backend/models/ and add this
+        /**
+        userSchema.methods.matchPassword = async function(enteredPassword) {
+            return await bcrypt.compare(enteredPassword, this.password)
+        }
+        **/
+
+File: (Section 7: Lesson 38) - Brief Explanation of JWT (JSON Web Tokrens)
+    

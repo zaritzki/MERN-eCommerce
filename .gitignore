@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+mynotes.txt
+
 # dependencies
 node_modules
 node_modules/
@@ -13,7 +15,10 @@ node_modules/
 /build
 
 # misc
+package-lock.json
 .DS_Store
+
+# env
 .env
 .env.local
 .env.development.local
