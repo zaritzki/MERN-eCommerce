@@ -13,7 +13,7 @@ const LoginScreen = ({ location, history }) => {
 
     const dispatch = useDispatch()
 
-    const userLogin = useSelector(state => state.userLogin)
+    const userLogin = useSelector((state) => state.userLogin)
     const { loading, error, userInfo } = userLogin
 
     const redirect = location.search ? location.search.split('=')[1] : '/'
@@ -57,13 +57,13 @@ const LoginScreen = ({ location, history }) => {
                 </Form.Group>
 
                 <Button type='submit' variant='primary'>Sign In</Button>
-
-                <Row className='py-3'>
-                    <Col>
-                        New Customer? <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register</Link>
-                    </Col>
-                </Row>
             </Form>
+
+            <Row className='py-3'>
+                <Col>
+                    New Customer? <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register</Link>
+                </Col>
+            </Row>
         </FormContainer>
     )
 }
